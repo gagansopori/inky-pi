@@ -10,15 +10,11 @@ class NewsBulletIn:
         self.inky_what = InkyWHAT("red")
         self.inky_what.set_border(self.inky_what.WHITE)
 
-
     def clear_screen(self):
         pass
 
     def build_font(self, text_h):
-        if os.name == 'nt':
-            return ImageFont.truetype('D:/zz2/Oswald.ttf', text_h)
-        else:
-            return ImageFont.truetype('%s/inky-pi/project/resources/Oswald.ttf' % (os.getcwd()), text_h)
+        return ImageFont.truetype('%s/inky-pi/project/resources/Oswald.ttf' % (os.getcwd()), text_h)
 
     def build_context(self, drawing_context):
         return ImageDraw.Draw(drawing_context)
@@ -26,10 +22,9 @@ class NewsBulletIn:
     def measure_text(self, display_font, display_text, display_context):
         return display_context.textsize(display_text, font=display_font)
 
-
     def draw_text(self):
         img = Image.new("P", (self.inky_what.WIDTH, self.inky_what.HEIGHT))
-        font = self.build_font(self.inky_what.HEIGHT/5)
+        font = self.build_font(self.inky_what.HEIGHT / 5)
         draw = self.build_context(img)
         text = "Hello World! Can I get a WHAT WHAT?!"
         x, y = 0, 0
@@ -43,8 +38,6 @@ class NewsBulletIn:
             self.inky_what.show()
 
 
-
 if __name__ == '__main__':
     news = NewsBulletIn()
     news.draw_text()
-
