@@ -5,7 +5,7 @@ class BuildInkyImages:
     def __init__(self):
         self.resize_factor: float = 1.0
 
-    def prepare_image(self, filepath, filename, screen) -> Image:
+    def prepare_image(self, filepath, filename, screen) -> None:
         if not filename.endswith(".png"):
             og_img = Image.open(filepath + filename)
             new_img = self.resize_image(og_img, screen)
@@ -49,5 +49,5 @@ class BuildInkyImages:
 
         return self.resize_factor
 
-    def save_to_disk(self, image, directory, filename):
+    def save_to_disk(self, image, directory, filename) -> None:
         image.save(f'{directory}/{filename}.png')
