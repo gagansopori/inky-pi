@@ -1,7 +1,7 @@
 #Ignoring IDE specific files
 .idea/**
 /venv/**
-/src/**/__pycache__/
+/sources/**/__pycache__/
 
 #Ignoring any other unnecessary files
 .gitattributes
