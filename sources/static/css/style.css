@@ -20,15 +20,26 @@ section {
     width: 500px;
     height: 700px;
     background: ghostwhite;
-    border-radius: 10px;
+    box-shadow: 0px 4px 24px rgba(0,0,0,0.1);
     font-family: "Swis721 Lt BT", sans-serif;
 }
 .inky-header {
     font-family: inherit;
     font-size: x-large;
-    display: flex;
-    justify-content: center;
     text-align: center;
+    padding: 50px 70px;
+}
+.inky-header p {
+    font-family: "Palatino Linotype", sans-serif;
+    font-size: medium;
+    text-align: center;
+}
+#brand-name {
+    text-align: center;
+}
+#brand-logo {
+    width: 50%;
+    height: 50%;
 }
 .inky-login-form {
     display: flex;
