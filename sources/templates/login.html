@@ -14,36 +14,41 @@ InkyPi - Login
 {#                        </div>#}
 {#                        <div class="inky-name">#}
                             <h1 id="brand-name">Inky Pi Portal</h1>
+                        <hr>
 {#                        </div>#}
 {#                        <div class="inky-motto">#}
-                            <p id="brand-motto">Drag. Draw. Drop. Drool</p>
+{#                            <p id="brand-motto">Drag. Draw. Drop. Drool</p>#}
 {#                        </div>#}
 
                     </div>
                     <div class="inky-login-form">
                         <form action="">
-                            <!--User Name -->
                             <div class="inky-inputbox">
-                                <label>
+                                <!--User Name-->
+                                <div id="username-wrapper">
                                     <input class="inkyInput" maxlength="255" name="username" type="text" placeholder="E-mail address or username" required>
-                                </label>
-                            </div>
-                            <!-- Password -->
-                            <div class="inky-inputbox">
-                                <label>
+                                </div>
+                                <!--Password-->
+                                <div id="password-wrapper">
                                     <input class="inkyInput" maxlength="64" name="password" type="password" placeholder="Password" required>
-                                </label>
-                            </div>
-                            <div class="persist-login">
-                                <label>
+                                </div>
+                                <!--Remember Me & Forgot Password-->
+                                <div id="persist-wrapper">
                                     <input type="checkbox" name="remember-me">Remember Me
-                                </label>
+                                </div>
+                                <!--Forgot Password-->
+                                <div id="forgot-password-wrapper">
+                                    <span class="inky-forgot-password"><a href="#">Forgot Password?</a></span>
+                                </div>
+                                <!--Submit Button-->
+                                <div id="inkyBtn">
+                                    <button type="submit" class="inkyBtn">Login</button>
+                                </div>
+                                <!--New User Registration-->
+                                <div id="new-user-wrapper">
+                                    <span class="inky-new-user">Don't have an account? <a href="#">Create Account</a></span>
+                                </div>
                             </div>
-                            <div class="inky-inputbox">
-                                <button type="submit" class="inkyBtn">Login</button>
-                            </div>
-                            <span class="inky-forgot-password"><a href="#">Forgot Password</a></span>
-                            <span class="inky-new-user">New User? <a href="#"> Sign-up</a></span>
                         </form>
                     </div>
                 </div>

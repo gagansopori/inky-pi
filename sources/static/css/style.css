@@ -27,7 +27,7 @@ section {
     font-family: inherit;
     font-size: x-large;
     text-align: center;
-    padding: 50px 70px;
+    padding: 50px 70px 0 70px;
 }
 .inky-header p {
     font-family: "Palatino Linotype", sans-serif;
@@ -41,40 +41,44 @@ section {
     width: 50%;
     height: 50%;
 }
-.inky-login-form {
-    display: flex;
+.inky-login-form form{
     font: inherit;
     box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    text-align: center;
+    padding: 10px 15px ;
 }
-.inky-inputbox, .inky-inputbox label {
-    width: 100%;
-    padding: 10px 0 10px 0;
+#username-wrapper, #password-wrapper {
+    font-family: inherit;
+    font-size: medium;
+    padding: 10px 15px;
 }
 .inkyInput, .inkyBtn {
     font: inherit;
-    font-size: medium;
-    padding: 5px 7px;
-    width: 100%;
+    width: 60%;
     height: 2vh;
+    padding: 8px;
     border-radius: 5px;
     border-width: thin;
 }
-.persist-login {
-    display: flex;
-    justify-content: center;
+#persist-wrapper {
     font: inherit;
-    font-size: medium;
-    padding: 5px;
+    padding: 10px 15px;
+}
+#inkyBtn {
+    padding: 10px 15px
+}
+#forgot-password-wrapper, #new-user-wrapper {
+    font-family: inherit;
+    font-size: small;
+    text-align: center;
 }
 .inkyBtn {
     text-align: center;
     background-color: limegreen;
     height: 100%;
     color: white;
-    display: flex;
-    justify-content: center;
+}
+.inkyBtn:hover {
+    background-color: forestgreen;
 }
 
