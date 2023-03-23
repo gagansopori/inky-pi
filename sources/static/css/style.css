@@ -19,8 +19,8 @@ section {
 .inky-login-frame {
     width: 500px;
     height: 700px;
-    background: ghostwhite;
-    box-shadow: 0px 4px 24px rgba(0,0,0,0.1);
+    background: white ;
+    box-shadow: 0px 4px 24px rgba(0,0,0,0.3);
     font-family: "Swis721 Lt BT", sans-serif;
 }
 .inky-header {
@@ -30,9 +30,10 @@ section {
     padding: 50px 70px 0 70px;
 }
 .inky-header p {
-    font-family: "Palatino Linotype", sans-serif;
+    font-family: "Showcard Gothic", sans-serif;
     font-size: medium;
     text-align: center;
+    margin-top: -15px;
 }
 #brand-name {
     text-align: center;
@@ -80,5 +81,15 @@ section {
 }
 .inkyBtn:hover {
     background-color: forestgreen;
+    cursor: pointer;
+}
+.inkyBtn:active {
+    background-color: forestgreen;
+    transform: translateY(2px);
+}
+@media screen and (max-height: 700px) {
+    body {
+        overflow: visible;
+    }
 }
 
