@@ -19,51 +19,77 @@ section {
 .inky-login-frame {
     width: 500px;
     height: 700px;
-    background: ghostwhite;
-    border-radius: 10px;
+    background: white ;
+    box-shadow: 0px 4px 24px rgba(0,0,0,0.3);
     font-family: "Swis721 Lt BT", sans-serif;
 }
 .inky-header {
     font-family: inherit;
     font-size: x-large;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    padding: 50px 70px 0 70px;
+}
+.inky-header p {
+    font-family: "Showcard Gothic", sans-serif;
+    font-size: medium;
+    text-align: center;
+    margin-top: -15px;
+}
+#brand-name {
     text-align: center;
 }
-.inky-login-form {
-    display: flex;
+#brand-logo {
+    width: 50%;
+    height: 50%;
+}
+.inky-login-form form{
     font: inherit;
     box-sizing: border-box;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    text-align: center;
+    padding: 10px 15px ;
 }
-.inky-inputbox, .inky-inputbox label {
-    width: 100%;
-    padding: 10px 0 10px 0;
+#username-wrapper, #password-wrapper {
+    font-family: inherit;
+    font-size: medium;
+    padding: 10px 15px;
 }
 .inkyInput, .inkyBtn {
     font: inherit;
-    font-size: medium;
-    padding: 5px 7px;
-    width: 100%;
+    width: 60%;
     height: 2vh;
+    padding: 8px;
     border-radius: 5px;
     border-width: thin;
 }
-.persist-login {
-    display: flex;
-    justify-content: center;
+#persist-wrapper {
     font: inherit;
-    font-size: medium;
-    padding: 5px;
+    padding: 10px 15px;
+}
+#inkyBtn {
+    padding: 10px 15px
+}
+#forgot-password-wrapper, #new-user-wrapper {
+    font-family: inherit;
+    font-size: small;
+    text-align: center;
 }
 .inkyBtn {
     text-align: center;
     background-color: limegreen;
     height: 100%;
     color: white;
-    display: flex;
-    justify-content: center;
+}
+.inkyBtn:hover {
+    background-color: forestgreen;
+    cursor: pointer;
+}
+.inkyBtn:active {
+    background-color: forestgreen;
+    transform: translateY(2px);
+}
+@media screen and (max-height: 700px) {
+    body {
+        overflow: visible;
+    }
 }
 
