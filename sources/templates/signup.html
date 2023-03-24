@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-InkyPi - Login
+InkyPi - New User Sign-Up
 {% endblock %}
 
 {% block body %}
@@ -12,6 +12,7 @@ InkyPi - Login
                         <a href="#"><img id="brand-logo" src="{{ url_for('static', filename='images/inky-head.png') }}" alt="inky-logo"></a>
                         <h1 id="brand-name">Inky Pi Portal</h1>
                         <p id="brand-motto">Drag. Draw. Drop. Drool</p>
+{#                        <hr style="transform: rotate(90deg)">#}
                         <hr>
                     </div>
                     <div class="inky-login-form">
@@ -29,25 +30,19 @@ InkyPi - Login
                                         <input class="inkyInput" maxlength="64" name="password" type="password" placeholder="Password" required>
                                     </label>
                                 </div>
-                                <!--Remember Me & Forgot Password-->
-                                <div id="persist-wrapper">
-                                    <label>
-                                        <input type="checkbox" name="remember-me">Remember Me
-                                    </label>
-                                </div>
-                                <!--Forgot Password-->
-                                <div id="forgot-password-wrapper">
-                                    <span class="inky-forgot-password"><a href="#">Forgot Password?</a></span>
-                                </div>
                                 <!--Submit Button-->
                                 <div id="inkyBtn">
-                                    <button type="submit" class="inkyBtn">Login</button>
+                                    <button type="submit" class="inkyBtn">Create Account</button>
+                                </div>
+                                <!--Policy & Terms-->
+                                <div id="data-policy-wrapper">
+                                    <p class="inky-data-policy">All your data is stored locally on your device.<br>This is never shared with any 3rd party.</p>
                                 </div>
                             </div>
                         </form>
                         <!--New User Registration-->
                         <div id="new-user-wrapper">
-                            <span class="inky-new-user">Don't have an account? <a href="{{ url_for('auth.register_user') }}">Create Account</a></span>
+                            <span class="inky-new-user">Already have an account? <a href="{{ url_for('auth.landing_page') }}">Log In</a></span>
                         </div>
                     </div>
                 </div>

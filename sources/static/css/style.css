@@ -20,7 +20,7 @@ section {
     width: 500px;
     height: 700px;
     background: white ;
-    box-shadow: 0px 4px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
     font-family: "Swis721 Lt BT", sans-serif;
 }
 .inky-header {
@@ -39,8 +39,8 @@ section {
     text-align: center;
 }
 #brand-logo {
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
 }
 .inky-login-form form{
     font: inherit;
@@ -68,7 +68,7 @@ section {
 #inkyBtn {
     padding: 10px 15px
 }
-#forgot-password-wrapper, #new-user-wrapper {
+#forgot-password-wrapper, #new-user-wrapper, #data-policy-wrapper {
     font-family: inherit;
     font-size: small;
     text-align: center;
@@ -92,4 +92,14 @@ section {
         overflow: visible;
     }
 }
+/*#data-policy-wrapper{*/
+/*    display: block;*/
+/*    font-family: inherit;*/
+/*    font-size: small;*/
+/*    padding: 10px 15px;*/
+/*    text-align: center;*/
+/*}*/
+/*.inky-data-policy {*/
+/*    width: 75%;*/
+/*}*/
 
