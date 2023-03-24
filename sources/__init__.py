@@ -10,9 +10,4 @@ def create_app(config=None):
     # def landing_page():
     #     # TODO: If user is logged in, redirect to home page, else redirect to login page
     #     return render_template('login.html')
-
-    # @app.route("/login/")
-    # def login():
-    #     return render_template('login.html')
-
     return app
