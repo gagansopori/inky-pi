@@ -1,3 +1,4 @@
+/*---------------Global Style Properties---------------*/
 body {
     overflow: hidden;
     background-image: url("../images/header-unsplash.jpg");
@@ -16,11 +17,17 @@ section {
     min-height: 100vh;
     width: 100%;
 }
+@media screen and (max-height: 700px) {
+    body {
+        overflow: visible;
+    }
+}
+/*---------------Login Page Styles---------------*/
 .inky-login-frame {
     width: 500px;
     height: 700px;
     background: white ;
-    box-shadow: 0px 4px 24px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.3);
     font-family: "Swis721 Lt BT", sans-serif;
 }
 .inky-header {
@@ -39,8 +46,8 @@ section {
     text-align: center;
 }
 #brand-logo {
-    width: 50%;
-    height: 50%;
+    width: 30%;
+    height: 30%;
 }
 .inky-login-form form{
     font: inherit;
@@ -68,7 +75,7 @@ section {
 #inkyBtn {
     padding: 10px 15px
 }
-#forgot-password-wrapper, #new-user-wrapper {
+#forgot-password-wrapper, #new-user-wrapper, #data-policy-wrapper {
     font-family: inherit;
     font-size: small;
     text-align: center;
@@ -87,9 +94,56 @@ section {
     background-color: forestgreen;
     transform: translateY(2px);
 }
-@media screen and (max-height: 700px) {
-    body {
-        overflow: visible;
-    }
-}
 
+
+/*---------------Sign-Up Page Styles---------------*/
+
+/*.inky-signup-frame {*/
+/*    width: 900px;*/
+/*    height: 600px;*/
+/*    background: white ;*/
+/*    box-shadow: 0 4px 24px rgba(0,0,0,0.3);*/
+/*    font-family: "Swis721 Lt BT", sans-serif;*/
+/*}*/
+/*.inky-signup-wrapper {*/
+/*    font-family: inherit;*/
+/*    display: inline-block;*/
+/*    text-align: center;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    vertical-align: top;*/
+/*}*/
+/*.inky-signup-header {*/
+/*    font-family: inherit;*/
+/*    font-size: x-large;*/
+/*    padding: 10px 20px 0 20px;*/
+/*    width: 40%;*/
+/*    float: left;*/
+/*}*/
+/*.inky-signup-header p {*/
+/*    font-family: "Showcard Gothic", sans-serif;*/
+/*    font-size: medium;*/
+/*    text-align: center;*/
+/*    margin-top: -15px;*/
+/*}*/
+/*.vertical-rule {*/
+/*    width: 10%;*/
+/*}*/
+/*!*.vertical-rule hr {*!*/
+/*!*    width: 100%;*!*/
+/*!*}*!*/
+/*.inky-signup-form {*/
+/*    position: relative;*/
+/*    width: 40%;*/
+/*    height: 100%;*/
+/*    float: right;*/
+/*    font-family: inherit;*/
+/*    font-size: x-large;*/
+/*    padding: 10px 20px 0 20px;*/
+/*}*/
+/*.inky-signup-form form{*/
+/*    font: inherit;*/
+/*    text-align: center;*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*}*/
