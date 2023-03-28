@@ -91,9 +91,56 @@ section {
     cursor: pointer;
 }
 .inkyBtn:active {
-    background-color: forestgreen;
+    background-color: darkgreen;
     transform: translateY(2px);
 }
+
+
+/*---------------Home Page Styles---------------*/
+.inky-home-page {
+    font-family: "Swis721 Lt BT", sans-serif;
+}
+/*#inky-header-bar {*/
+/*    background-color: black;*/
+/*}*/
+#inky-header-bar h1 {
+    font-family: inherit;
+    text-align: center;
+}
+#brand-icon {
+    width: 32px;
+    margin-top: 10px;
+}
+
+.inky-nav-bar {
+    font-family: inherit;
+    background-color: forestgreen;
+}
+.inky-nav-bar ul{
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.inky-nav-bar li {
+    float: left;
+}
+.nav-right li {
+    float: right;
+}
+.inky-nav-bar li a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.inky-nav-bar li a:hover {
+    background-color: darkgreen;
+}
+
+
+
 
 
 /*---------------Sign-Up Page Styles---------------*/
