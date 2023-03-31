@@ -1,5 +1,5 @@
 from flask import Flask
-from sources.webservice import UserAuthentication
+from sources.webservice.controllers import UserAuthentication
 
 
 def create_app(config=None):
