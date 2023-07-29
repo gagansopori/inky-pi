@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}
+InkyPi - Login
+{% endblock %}
+
+{% block body %}
+    <section>
+        <div class="inky-login-frame">
+            <div class="inky-login-wrapper">
+                <div class="inky-header">
+                    <a href="{{ url_for('auth.landing_page') }}"><img id="brand-logo" src="{{ url_for('static', filename='images/inky-logo.png') }}" alt="inky-logo"></a>
+                    <h1 id="brand-name">Inky Pi Portal</h1>
+                    <p id="brand-motto">Drag. Draw. Drop. Drool</p>
+                    <hr>
+                </div>
+                <div class="inky-login-form">
+                    <form method="post">
+                        <div class="inky-inputbox">
+                            <!--User Name-->
+                            <div id="username-wrapper">
+                                <label>
+                                    <input class="inkyInput" maxlength="255" name="username" type="text" placeholder="E-mail address or username" required>
+                                </label>
+                            </div>
+                            <!--Password-->
+                            <div id="password-wrapper">
+                                <label>
+                                    <input class="inkyInput" maxlength="64" name="password" type="password" placeholder="Password" required>
+                                </label>
+                            </div>
+                            <!--Remember Me & Forgot Password-->
+                            <div id="persist-wrapper">
+                                <label>
+                                    <input type="checkbox" name="remember-me">Remember Me
+                                </label>
+                            </div>
+                            <!--Forgot Password-->
+                            <div id="forgot-password-wrapper">
+                                <span class="inky-forgot-password"><a href="#">Forgot Password?</a></span>
+                            </div>
+                            <!--Submit Button-->
+                            <div id="inkyBtn">
+                                <button type="submit" class="inkyBtn">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!--New User Registration-->
+                    <div id="new-user-wrapper">
+                        <span class="inky-new-user">Don't have an account? <a href="{{ url_for('auth.register_user') }}">Create Account</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

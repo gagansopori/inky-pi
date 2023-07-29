@@ -4,16 +4,21 @@ InkyPi - Home
 {% endblock %}
 
 {% block body %}
-    <header id="inky-header-bar">
-        <div class="inky-header-navbar">
-            <div class="inky-header-wrapper">
-                <h1 class="text-center">Inky Pi Portal</h1>
-            </div>
-        </div>
-    </header>
-    <footer>
+    <div class="inky-home-page">
+        <header id="inky-header-bar">
+{#            <a href="#"><img id="brand-icon" src="{{ url_for('static', filename='images/inky-icon.png') }}" alt="inky-logo"></a>#}
+            <h1 id="brand-name">Inky Pi Portal</h1>
+            <nav class="inky-nav-bar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Draw</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
 
-    </footer>
+
 
 
 
