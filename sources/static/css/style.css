@@ -40,13 +40,6 @@ section {
     text-align: center;
     margin-top: -15px;
 }
-#brand-name {
-    text-align: center;
-}
-#brand-logo {
-    width: 30%;
-    height: 30%;
-}
 .inky-login-form form{
     font: inherit;
     box-sizing: border-box;
@@ -57,40 +50,6 @@ section {
     font-family: inherit;
     font-size: medium;
     padding: 10px 15px;
-}
-.inkyInput, .inkyBtn {
-    font: inherit;
-    width: 60%;
-    height: 2vh;
-    padding: 8px;
-    border-radius: 5px;
-    border-width: thin;
-}
-#persist-wrapper {
-    font: inherit;
-    padding: 10px 15px;
-}
-#inkyBtn {
-    padding: 10px 15px
-}
-#forgot-password-wrapper, #new-user-wrapper, #data-policy-wrapper {
-    font-family: inherit;
-    font-size: small;
-    text-align: center;
-}
-.inkyBtn {
-    text-align: center;
-    background-color: limegreen;
-    height: 100%;
-    color: white;
-}
-.inkyBtn:hover {
-    background-color: forestgreen;
-    cursor: pointer;
-}
-.inkyBtn:active {
-    background-color: darkgreen;
-    transform: translateY(2px);
 }
 
 /*---------------Sign-Up Page Styles---------------*/
@@ -133,6 +92,56 @@ section {
     box-sizing: border-box;
     text-align: center;
     padding: 15px 10px;
+}
+.vertical-line {
+    width: 50%;
+    height:0.5px;
+    background-color: black;
+    padding: 0;
+    margin: 0;
+    transform: rotate(90deg);
+}
+/*---------------Common Login & Signup Page Elements---------------*/
+#brand-name {
+    text-align: center;
+}
+#brand-logo {
+    width: 30%;
+    height: 30%;
+}
+.inkyInput, .inkyBtn {
+    font: inherit;
+    width: 75%;
+    /*height: 1.5vh;*/
+    padding: 8px;
+    border-radius: 5px;
+    border-width: thin;
+}
+#persist-wrapper {
+    font: inherit;
+    padding: 10px 15px;
+}
+#inkyBtn {
+    padding: 10px 15px
+}
+#forgot-password-wrapper, #new-user-wrapper, #data-policy-wrapper {
+    font-family: inherit;
+    font-size: small;
+    text-align: center;
+}
+.inkyBtn {
+    text-align: center;
+    background-color: limegreen;
+    height: 100%;
+    color: white;
+}
+.inkyBtn:hover {
+    background-color: forestgreen;
+    cursor: pointer;
+}
+.inkyBtn:active {
+    background-color: darkgreen;
+    transform: translateY(2px);
 }
 
 /*---------------Home Page Styles---------------*/
@@ -185,6 +194,7 @@ section {
     .inky-signup-frame {
         overflow: hidden;
         height: 50%;
+        padding: 20px 20px;
     }
     .inky-signup-header {
         font-family: inherit;
@@ -199,10 +209,10 @@ section {
     .inky-signup-wrapper {
         flex-direction: column;
     }
-    /*.vertical-line{*/
-    /*    background-color: black;*/
-    /*    height: 1px;*/
-    /*    width: 60%;*/
-    /*    transform: rotate(0deg);*/
-    /*}*/
+    .vertical-line{
+        background-color: black;
+        height: 1px;
+        width: 60%;
+        transform: rotate(0deg);
+    }
 }

@@ -7,9 +7,19 @@ from sources.webservice.models.UserProfile import UserProfile
 bp = Blueprint('auth', __name__)
 
 
-@bp.route("/", methods=('GET', 'POST'))
-@bp.route("/login", methods=('GET', 'POST'))
+@bp.route("/")
 def landing_page():
+    """
+    This is the main entry-point for the user into the service. Logged-In users will be redirected to their home page &
+    other users will be redirected to the login page from where they can start navigating the website.
+    :return:
+    """
+    # TODO: If user is logged in redirect to home page else to login page.
+    return redirect(url_for('auth.login_user'))
+
+
+@bp.route("/login", methods=('GET', 'POST'))
+def login_user():
     # TODO - If user is logged or logs in then redirect to home page with user info. else throw error.
     if request.method == 'POST':
         # Sanitize input & send for authentication
@@ -17,6 +27,7 @@ def landing_page():
         user = authenticate_user(username, password)
         if user.messages is not None:
             # flash(user.messages)
+            print('Im here')
             return render_template('authentication/login.html')
         else:
             return render_template('index.html')
@@ -34,6 +45,12 @@ def register_user():
         return redirect(url_for('auth.landing_page'))
 
     return render_template('authentication/signup.html')
+
+
+@bp.route("/logout")
+def logout_user():
+    session.clear()
+    return redirect(url_for('auth.landing_page'))
 
 
 def authenticate_user(username, password):
