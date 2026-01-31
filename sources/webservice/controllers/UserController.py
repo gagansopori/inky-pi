@@ -13,7 +13,7 @@ def landing_page():
     other users will be redirected to the login page from where they can start navigating the website.
     :return:
     """
-    # TODO: If user is logged in redirect to home page else to login page.
+    # TODO: If user is in a logged-in session, redirect to home page else to login page.
     return redirect(url_for('auth.login_user'))
 
 
