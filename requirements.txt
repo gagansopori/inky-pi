@@ -1,0 +1,12 @@
+# Hardware communication
+spidev
+RPi.GPIO
+inky
+
+# Image and Data processing
+Pillow
+numpy
+
+# Networking & Web
+flask
+requests
