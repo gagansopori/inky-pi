@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: sans-serif; background: #f0f0f5; padding: 20px; text-align: center; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .btn-blue { background: #007bff; color: white; }
+        .btn-red { background: #dc3545; color: white; margin-top: 30px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h3>Layout</h3>
+        <button class="btn btn-blue" onclick="send('grid', 'NamePlate')">Grid Mode</button>
+        <hr>
+        <h3>Single Mode</h3>
+        <button class="btn" onclick="send('single', 'NamePlate')">Identity</button>
+        <button class="btn" onclick="send('single', 'Clock')">Clock</button>
+        <button class="btn" onclick="send('single', 'Sports')">Sports</button>
+    </div>
+    <button class="btn btn-red" onclick="shutdown()">Shutdown Pi</button>
+
+    <script>
+        function send(m, w) {
+            fetch('/api/settings/layout', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({mode: m, active_widget: w})
+            }).then(() => alert("Setting Saved"));
+        }
+        function shutdown() {
+            if(confirm("Shutdown?")) fetch('/api/system/shutdown', {method: 'POST'});
+        }
+    </script>
+</body>
+</html>

@@ -13,3 +13,25 @@ RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
+
+[Unit]
+Description=InkyPi Dashboard Service
+After=network.target
+
+[Service]
+# The user who will run the application
+User=pi
+# The project root directory
+WorkingDirectory=/home/pi/inky-pi
+# Points to your start.sh script which handles the Wi-Fi check logic
+ExecStart=/bin/bash /home/pi/inky-pi/start.sh
+# Ensure the process restarts if it crashes
+Restart=always
+RestartSec=10
+# Standard logging
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+# This ensures the service starts when the Pi reaches the normal multi-user boot state
+WantedBy=multi-user.target
