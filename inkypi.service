@@ -1,0 +1,15 @@
+[Unit]
+Description=InkyPi Boot Manager
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/inky-pi
+# We call the bash orchestrator
+ExecStart=/bin/bash /home/pi/inky-pi/start.sh
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
