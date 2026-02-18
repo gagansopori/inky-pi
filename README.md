@@ -31,3 +31,55 @@ There are 3 types of users for this -
    - Cant Save the state of his system.
 
 
+### Project Structure
+```markdown
+inky-pi/
+├── assets/                     # STATIC RESOURCES (Source of Truth)
+│   ├── fonts/                  # Custom .ttf/.otf files (installed during setup)
+│   ├── identity.md             # Name, Title, Company data
+│   └── sports_config.md        # ESPN API URLs and preferences
+│
+├── core/                       # THE SERVER (Data & Hardware Orchestration)
+│   ├── hardware/               # THE ADAPTERS (Hardware Abstraction Layer)
+│   │   ├── __init__.py
+│   │   ├── base.py             # Abstract Base Class for any e-paper
+│   │   ├── inky_adapter.py     # Implementation for Pimoroni Inky
+│   │   └── mock_adapter.py     # Implementation for local dev (saves to .png)
+│   ├── widgets/                # THE STRATEGIES (Individual Logic Units)
+│   │   ├── __init__.py
+│   │   ├── base.py             # Widget & State base classes
+│   │   ├── clock.py            # Time/Date logic
+│   │   ├── name_plate.py       # MD parser for identity.md
+│   │   └── sports.py           # API logic for sports_config.md
+│   ├── __init__.py
+│   ├── database.py             # SQLite interface (Bridge between Web and Core)
+│   ├── orchestrator.py         # Main Loop: Poll DB -> Fetch -> Render -> Display
+│   └── renderer.py             # PIL logic: Composes widgets into a single image
+│
+├── lifecycle/                  # THE SUPERVISOR (System State Management)
+│   ├── __init__.py
+│   ├── supervisor.py           # Traffic Cop: Decides Config vs. Run mode
+│   ├── installer.py            # One-time setup (DB init, Font installation)
+│   └── wifi_manager.py         # Hotspot/Access Point logic
+│
+├── scripts/                    # AUTOMATION
+│   ├── install.sh              # Entry point for first-time installation
+│   ├── start.sh                # Executed by Systemd on boot
+│   └── update.sh               # OTA Update logic (Git pull + Restart)
+│
+├── tests/                      # Unit testing for widgets/logic
+│
+├── web/                        # THE CLIENT (Remote Control Interface)
+│   ├── static/                 # CSS, JS, and UI Icons
+│   ├── templates/
+│   │   ├── dashboard.html      # Run Mode interface (Layout toggles)
+│   │   └── config.html         # Config Mode interface (Wi-Fi setup)
+│   ├── __init__.py
+│   └── app.py                  # Flask server (Writes to DB, reads system status)
+│
+├── requirements.txt            # Python dependencies
+├── inkypi.service              # Systemd configuration file
+└── README.md                   # Project documentation
+```
+
+

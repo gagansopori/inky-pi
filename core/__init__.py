@@ -1,18 +1,5 @@
-#
 # import logging
-# from inky.auto import auto
-#
-# uc8159M = [15, 16]
-# uc8159L = [14]
-#
-#
-# class DetectInkyBoard:
-#     def __init__(self):
-#         # Setup Inky Board
-#         self.inky = auto(verbose=True)
-#         self.inky.set_border(self.inky.WHITE)
-#
-#
+
 # class InitializeCustomLogger:
 #     def __init__(self, classname, level=None):
 #         if not level:

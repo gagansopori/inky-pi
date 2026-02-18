@@ -1,11 +1,11 @@
 import threading, time
 from flask import Flask, render_template, jsonify, request
-from .system_manager import SystemManager
-from .config_manager import ConfigurationManager
-from .renderer import InkyRenderer
-from .widgets.name_plate import NamePlateWidget, NamePlateMini, NamePlateMaxi
-from .widgets.clock import ClockWidget, ClockMini, ClockMaxi
-from .widgets.sports import SportsWidget, SportsMini, SportsMaxi
+from web.system import SystemManager
+from zapplication.config_manager import ConfigurationManager
+from core.renderer import InkyRenderer
+from core.widgets import NamePlateWidget, NamePlateMini, NamePlateMaxi
+from core.widgets import ClockWidget, ClockMini, ClockMaxi
+from core.widgets import SportsWidget, SportsMini, SportsMaxi
 
 app = Flask(__name__)
 db = ConfigurationManager()
