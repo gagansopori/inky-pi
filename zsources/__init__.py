@@ -1,6 +1,6 @@
 from flask import Flask
 
-from sources.webservice.controllers import UserController
+from zsources.webservice.controllers import UserController
 
 
 def create_app(config=None):

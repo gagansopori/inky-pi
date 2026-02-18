@@ -1,7 +1,7 @@
 from flask import Blueprint, flash, g, redirect, render_template, request, session, url_for
 
-from sources.webservice.controllers import user_deets
-from sources.webservice.models.UserProfile import UserProfile
+from zsources.webservice.controllers import user_deets
+from zsources.webservice.models.UserProfile import UserProfile
 
 bp = Blueprint('auth', __name__)
 

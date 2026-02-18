@@ -1,7 +1,7 @@
 # import PIL
 # from PIL import Image
 #
-# from sources.inkypi import InitializeCustomLogger
+# from zsources.inkypi import InitializeCustomLogger
 #
 #
 # class ImageProcessingUtil:
