@@ -47,7 +47,7 @@ def init_database():
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
-    # System State Singleton
+    # 1. Create Tables
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS system_state (
             id INTEGER PRIMARY KEY CHECK (id = 1),
@@ -58,7 +58,6 @@ def init_database():
         )
     ''')
 
-    # Widget Configurations
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS widget_configs (
             widget_id TEXT PRIMARY KEY,
@@ -67,7 +66,7 @@ def init_database():
         )
     ''')
 
-    # Seed Factory Defaults
+    # 2. Seed System State Singleton
     cursor.execute("SELECT COUNT(*) FROM system_state")
     if cursor.fetchone()[0] == 0:
         log.info("First-run detected: Seeding default system state (name_plate).")
@@ -75,6 +74,20 @@ def init_database():
             INSERT INTO system_state (id, active_mode, is_enabled)
             VALUES (1, 'name_plate', 1)
         ''')
+
+    # 3. Seed Widget Configs (Independent of System State)
+    default_widgets = [
+        ('clock', 'full', '{"show_seconds": false, "military_time": false}'),
+        ('name_plate', 'full', '{}'),
+        ('sports', 'full', '{"preferred_league": "NBA"}')
+    ]
+
+    for w_id, slot, cfg in default_widgets:
+        cursor.execute("SELECT COUNT(*) FROM widget_configs WHERE widget_id = ?", (w_id,))
+        if cursor.fetchone()[0] == 0:
+            log.info(f"Seeding default config for {w_id}...")
+            cursor.execute("INSERT INTO widget_configs (widget_id, layout_slot, config_json) VALUES (?, ?, ?)",
+                           (w_id, slot, cfg))
 
     conn.commit()
     conn.close()
