@@ -42,7 +42,7 @@ echo "--- 4. Granting Port 80 Permissions to Venv ---"
 # Allows Flask to run on port 80 without sudo
 sudo setcap 'cap_net_bind_service=+ep' $PROJECT_ROOT/.venv/bin/python3
 
-echo "--- 6. Installing Systemd Service ---"
+echo "--- 5. Installing Systemd Service ---"
 if [ -f "inkypi.service" ]; then
     sudo cp inkypi.service /etc/systemd/system/inkypi.service
     sudo systemctl daemon-reload
@@ -50,8 +50,11 @@ if [ -f "inkypi.service" ]; then
     echo "Service installed and enabled."
 fi
 
-echo "--- 7. Setting Script Permissions ---"
-chmod +x start.sh
+echo "--- 6. Setting Script Permissions ---"
+chmod +x scripts/start.sh
 chmod +x setup/start_config_mode.sh
+
+echo "--- 7. Marking Installation Complete ---"
+touch "$PROJECT_ROOT/.installed"
 
 echo "Setup Complete. Reboot or run 'sudo systemctl start inkypi.service'"
