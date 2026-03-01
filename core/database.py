@@ -5,7 +5,10 @@ from core.logger import CustomLogger
 
 # Anchor to project root/data
 BASE_DIR = Path(__file__).resolve().parent.parent
-DB_PATH = BASE_DIR / "data" / "inky_pi.db"
+# Ensure the data directory exists
+DB_DIR = BASE_DIR / "data"
+DB_DIR.mkdir(exist_ok=True)
+DB_PATH = DB_DIR / "inky_pi.db"
 
 log = CustomLogger("database", log_to_file=False)
 
@@ -20,6 +23,11 @@ class DatabaseManager:
     LOG_ERROR_SQL = "UPDATE system_state SET last_error = ? WHERE id = 1"
 
     GET_WIDGET_SQL = "SELECT * FROM widget_configs WHERE widget_id = ?"
+
+    # --- NEW: WiFi Config SQL ---
+    UPDATE_WIFI_SQL = "UPDATE wifi_config SET ssid = ?, password = ? WHERE id = 1"
+    GET_WIFI_SQL = "SELECT * FROM wifi_config WHERE id = 1"
+
     UPSERT_WIDGET_SQL = """
         INSERT INTO widget_configs (widget_id, layout_slot, config_json)
         VALUES (?, ?, ?)
@@ -64,6 +72,18 @@ class DatabaseManager:
         else:
             now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             self._execute_query(self.LOG_REFRESH_SQL, (now,), commit=True)
+
+    # --- WiFi Configuration (Merged from db_manager.py) ---
+
+    def update_wifi_creds(self, ssid, password):
+        """Saves Wi-Fi credentials from the setup portal."""
+        log.info(f"Saving new Wi-Fi credentials for SSID: {ssid}")
+        return self._execute_query(self.UPDATE_WIFI_SQL, (ssid, password), commit=True)
+
+    def get_wifi_creds(self):
+        """Retrieves stored Wi-Fi credentials."""
+        results = self._execute_query(self.GET_WIFI_SQL, fetch=True)
+        return dict(results[0]) if results else None
 
     # --- Widget Configs ---
 
