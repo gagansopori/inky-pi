@@ -1,7 +1,6 @@
 from PIL import Image, ImageDraw
 from inky.auto import auto
 
-
 class InkyRenderer:
     def __init__(self):
         try:

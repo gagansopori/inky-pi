@@ -16,7 +16,7 @@ fi
 
 # Determine the directory where the script is located to allow for relative paths
 PROJECT_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
-cd "$PROJECT_ROOT"
+cd "$PROJECT_ROOT" || exit 1
 
 echo "--- 1. Enabling Hardware Interfaces ---"
 # Enable SPI and I2C via raspi-config (Non-interactive)
@@ -31,9 +31,15 @@ apt-get install -y \
     libtiff6 \
     libatlas-base-dev \
     libcap2-bin \
+    libopenblas-dev \
+    libgpiod-dev \
+    python3-pip \
+    python3-venv \
     python3-numpy \
     python3-pil \
+    python3-smbus \
     python3-rpi.gpio \
+    python3-spidev \
     fontconfig
 
 echo "--- 3. Installing System-Wide Fonts ---"
@@ -76,6 +82,7 @@ chmod +x scripts/start.sh
 chmod +x scripts/update.sh
 
 # Create the hidden installation flag
+echo "--- 8. Marking Installation Complete ---"
 touch .installed
 
 echo ""
